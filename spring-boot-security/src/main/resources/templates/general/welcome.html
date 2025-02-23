@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Welcome Page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<style type="text/css">
+		h1 {
+	    	text-align: center;
+	    }
+		p,a {
+	    	text-align: center;
+	    }
+	</style>
+</head>
+<body>
+	<h1><span th:text="#{greetings.hello}">Hello Message</span></h1>
+
+	<p>Welcome to <span th:text="${appName}">Location to show the App Name</span></p>
+
+	<p>Message printed at - <span th:text="${currentDateTime}">The current date time</span></p>
+
+	<p><a th:href="@{/home}">Home</a></p>
+</body>
+</html>
