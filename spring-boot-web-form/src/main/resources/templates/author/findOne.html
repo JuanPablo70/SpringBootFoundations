@@ -1,0 +1,58 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Author</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<style type="text/css">
+	    h2 {
+	    	text-align: center;
+	    }
+	    form {
+    		display: table;
+    		margin: 0px auto;
+		}
+		fieldset {
+   			display: inline-block;
+		}
+		table {
+   			margin: 0px auto;
+		}
+		p,a {
+	    	text-align: center;
+	    }
+	</style>
+</head>
+<body>
+    <h2>Author</h2>
+	<form th:object="${author}">
+		<fieldset>
+			<legend>Details</legend>
+			<table>
+				<tr>
+					<td><label th:for="id"
+					           th:text="#{form.label.author.id}">Id:</label></td>
+					<td><input th:field="*{id}"
+					           th:id="id"
+					           th:name="id"
+							   th:readonly="readonly"
+					           th:size="100"/></td>
+				</tr>
+				<tr>
+					<td><label th:for="name"
+					           th:text="#{form.label.author.name}">Name:</label></td>
+					<td><input th:field="*{name}"
+							   th:readonly="readonly"
+					           th:size="100"/></td>
+				</tr>
+				<tr>
+					<td><label th:for="lastname"
+					           th:text="#{form.label.author.lastname}">Lastname:</label></td>
+					<td><input th:field="*{lastname}"
+							   th:readonly="readonly"
+					           th:size="100"/></td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+    <p><a th:href="@{/home}">Home</a></p>
+</body>
+</html>

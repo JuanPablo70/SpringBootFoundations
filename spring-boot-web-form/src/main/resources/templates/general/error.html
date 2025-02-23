@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Error</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<style type="text/css">
+		h2 {
+	    	text-align: center;
+	    }
+	    .error {
+	    	color: red;
+	    	font-weight: bold
+	    }
+		p,a {
+	    	text-align: center;
+	    }
+	</style>
+</head>
+<body>
+	<h2>Error</h2>
+
+	<p><span th:class="error" th:text="${errorMessage}">The error message</span></p>
+
+	<p>Message printed at - <span th:text="${currentDateTime}">The current date time</span></p>
+
+	<p><a th:href="@{/home}">Home</a></p>
+</body>
+</html>

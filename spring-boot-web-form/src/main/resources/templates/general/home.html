@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Home</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<style type="text/css">
+		h2 {
+	    	text-align: center;
+	    }
+		p,a {
+	    	text-align: center;
+	    }
+	</style>
+</head>
+<body>
+	<h2>Home</h2>
+
+	<p><a th:href="@{/welcome}">Go to Welcome</a></p>
+	<p><a th:href="@{/url/authors}">Authors - URL</a></p>
+	<p><a th:href="@{/uri/authors}">Authors - URI</a></p>
+</body>
+</html>
