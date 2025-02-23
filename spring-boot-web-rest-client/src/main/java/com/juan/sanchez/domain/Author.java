@@ -1,0 +1,85 @@
+package com.juan.sanchez.domain;
+
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.LinkedHashSet;
+import java.util.Objects;
+import java.util.Set;
+
+
+public class Author implements Serializable {
+
+    private int id;
+
+    private String name;
+
+    private String lastname;
+
+    private LocalDate birthday;
+
+    private final Set<Book> books = new LinkedHashSet<>();
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
+    }
+
+    public void addBook(Book book) {
+        book.setAuthorId(id);
+        books.add(book);
+    }
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return id == author.id && Objects.equals(name, author.name) && Objects.equals(lastname, author.lastname) && Objects.equals(birthday, author.birthday);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, lastname, birthday);
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", birthday=" + birthday +
+                '}';
+    }
+}
