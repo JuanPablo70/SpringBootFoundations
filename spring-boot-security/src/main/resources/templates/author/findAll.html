@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Authors</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<style type="text/css">
+	    h2 {
+	    	text-align: center;
+	    }
+		table {
+   			margin: 0px auto;
+		}
+		p,a {
+	    	text-align: center;
+	    }
+	</style>
+</head>
+<body>
+	<h2>Authors</h2>
+	<table>
+		<tr>
+			<th>N</th>
+			<th><span th:text="#{form.label.author.id}"></span></th>
+			<th><span th:text="#{form.label.author.name}"></span></th>
+			<th><span th:text="#{form.label.author.lastname}"></span></th>
+			<th><span th:text="#{form.label.details}"></span></th>
+			<th><span th:text="#{form.label.details.book}"></span></th>
+			<th><span th:text="#{form.label.delete}"></span></th>
+			<th><span th:text="#{form.label.details}"></span></th>
+			<th><span th:text="#{form.label.details.book}"></span></th>
+			<th><span th:text="#{form.label.delete}"></span></th>
+		</tr>
+		<tr th:each="author : ${authors}">
+			<td th:text="${authorStat.count}"></td>
+			<td th:text="${author.id}"></td>
+			<td th:text="${author.name}"></td>
+			<td th:text="${author.lastname}"></td>
+			<td><a th:href="@{/url/author(id=${author.id})}">Click</a></td>
+			<td><a th:href="@{/url/author/books(id=${author.id})}">Click</a></td>
+			<td><a th:href="@{/url/author/delete(id=${author.id})}">Click</a></td>
+			<td><a th:href="@{/uri/authors/{id}(id=${author.id})}">Click</a></td>
+			<td><a th:href="@{/uri/authors/{id}/books(id=${author.id})}">Click</a></td>
+			<td><a th:href="@{/uri/authors/{id}/delete(id=${author.id})}">Click</a></td>
+		</tr>
+	</table>
+	<p><a th:href="@{/home}">Home</a></p>
+</body>
+</html>
